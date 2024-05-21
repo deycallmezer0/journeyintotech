@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.title {
+    text-align: center;
+    padding: 20px;
+}
+
+.description {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.resume {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+.resume-content {
+    margin-bottom: 20px;
+}
+
+.resume-content h2 {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.education, .experience, .skills {
+    margin-bottom: 20px;
+}
+
+.resume-download {
+    text-align: center;
+}
+
+.resume-download a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.resume-download a:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  Home Page
+{% endblock %}
+{% block extrahead %}
+  <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1>Welcome to Journey into Tech!</h1>
+    <p>This is my first Django project and I'm excited to share it with you. I hope you enjoy your visit!</p>
+    <p>This site is a work in progress as I will be using it to learn and practice Django. I will be adding new features and content as I learn more about Django and web development.</p>
+    <p>Feel free to explore the site and check out the different sections. If you have any feedback or suggestions, please let me know. I would love to hear from you!</p>
+    <p>Thank you for visiting and I hope you have a great day!</p>
+    <p>~ Chris Holmes</p>
+  </div>
+{% endblock %}
+
+{% block extra_js %}
+  <script src="{% static 'js/home.js' %}"></script>
+{% endblock %}

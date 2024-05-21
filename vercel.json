@@ -15,11 +15,6 @@
         "src": "/(.*)",
         "dest": "/manage.py"
       }
-    ],
-  "env": {
-    "POSTGRES_URL": "@POSTGRES_URL",
-    "SECRET_KEY": "@SECRET_KEY",
-    "DEBUG": "@DEBUG",
-    "ALLOWED_HOSTS": "@ALLOWED_HOSTS"
+    ]
   }
-}
+  

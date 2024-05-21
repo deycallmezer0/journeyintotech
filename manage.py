@@ -16,3 +16,8 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+# Add this line at the end of manage.py to set up the WSGI application for Vercel
+from portfolio.wsgi import application
+
+app = application

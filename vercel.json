@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "portfolio/wsgi.py",
+        "src": "manage.py",
         "use": "@vercel/python",
         "config": {
           "installCommand": "pip install -r requirements.txt",
@@ -13,12 +13,8 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/portfolio/wsgi.py"
+        "dest": "/manage.py"
       }
-    ],
-    "env": {
-      "POSTGRES_URL": "@POSTGRES_URL",
-      "SECRET_KEY": "@your-secret-key"
-    }
+    ]
   }
   

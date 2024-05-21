@@ -8,13 +8,23 @@
           "installCommand": "pip install -r requirements.txt",
           "buildCommand": "python manage.py collectstatic --noinput"
         }
+      },
+      {
+        "src": "portfolio/wsgi.py",
+        "use": "@vercel/python"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/manage.py"
+        "dest": "portfolio/wsgi.py"
       }
-    ]
+    ],
+    "env": {
+      "POSTGRES_URL": "@POSTGRES_URL",
+      "SECRET_KEY": "@SECRET_KEY",
+      "DEBUG": "@DEBUG",
+      "ALLOWED_HOSTS": "@ALLOWED_HOSTS"
+    }
   }
   

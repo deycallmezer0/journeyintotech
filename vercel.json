@@ -17,7 +17,7 @@
       }
     ],
     "env": {
-      "DATABASE_URL": "@postgres://cvcuqnfmedguac:56a12d052d045d67956c5b09fa46dafdbbc5073c805cc9b5f660edb67e764fde@ec2-44-215-176-210.compute-1.amazonaws.com:5432/d6g6srhimt2coe",
+      "DATABASE_URL": "@DATABASE_URL",
       "SECRET_KEY": "@TEST"
     }
   }

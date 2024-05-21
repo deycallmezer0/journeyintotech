@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "manage.py",
+        "src": "portfolio/wsgi.py",
         "use": "@vercel/python",
         "config": {
           "installCommand": "pip install -r requirements.txt",
@@ -13,8 +13,12 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/manage.py"
+        "dest": "/portfolio/wsgi.py"
       }
-    ]
+    ],
+    "env": {
+      "DATABASE_URL": "@postgres://cvcuqnfmedguac:56a12d052d045d67956c5b09fa46dafdbbc5073c805cc9b5f660edb67e764fde@ec2-44-215-176-210.compute-1.amazonaws.com:5432/d6g6srhimt2coe",
+      "SECRET_KEY": "@TEST"
+    }
   }
   

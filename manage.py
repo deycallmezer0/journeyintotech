@@ -1,6 +1,8 @@
 import os
 import sys
-
+import { inject } from '@vercel/analytics';
+ 
+inject();
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'portfolio.settings')

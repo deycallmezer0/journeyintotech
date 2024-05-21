@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (nameMatch) {
         project.style.display = "";
       } else {
-        project.style.display = "none";
+        project.style.display = "none";``
       }
     });
   }

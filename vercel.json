@@ -1,14 +1,14 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "manage.py",
-        "use": "@vercel/python",
-        "config": {
-          "installCommand": "pip install -r requirements.txt",
-          "buildCommand": "python manage.py collectstatic --noinput"
-        }
+  "version": 2,
+  "builds": [
+    {
+      "src": "manage.py",
+      "use": "@vercel/python",
+      "config": {
+        "installCommand": "pip install -r requirements.txt",
+        "buildCommand": "python manage.py collectstatic --noinput"
       }
+<<<<<<< HEAD
     ],
     "routes": [
       {
@@ -22,3 +22,22 @@
     }
   }
   
+=======
+    },
+    {
+      "src": "staticfiles/**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/staticfiles/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/manage.py"
+    }
+  ]
+}
+>>>>>>> d34e630779183b1cabd77b3b3a8561dc64f2e815

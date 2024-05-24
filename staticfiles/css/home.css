@@ -11,22 +11,70 @@ body {
   background-color: #fff;
   padding: 20px;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  border-radius: 8px;
 }
 
 .container h1 {
   text-align: center;
   padding: 20px;
+  color: #333;
 }
 
-.container p {
-  font-size: 1.2em;
+.hero img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  text-align: center;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.team-member {
+  width: 45%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.team-member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.team-member h3 {
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+.team-member h4 {
+  margin: 5px 0 10px;
+  color: #888;
+}
+
+.team-member p {
+  font-size: 1em;
   color: #666;
   line-height: 1.6;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
-  .tags-list {
-    flex-direction: column;
+  .container {
+    width: 90%;
+  }
+  
+  .team-member {
+    width: 100%;
   }
 }

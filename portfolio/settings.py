@@ -4,13 +4,19 @@ from dotenv import load_dotenv
 import dj_database_url
 
 load_dotenv()
+<<<<<<< HEAD
+=======
+import mimetypes
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+mimetypes.add_type("text/css", ".css", True)
+mimetypes.add_type("application/javascript", ".js", True)
+>>>>>>> d34e630779183b1cabd77b3b3a8561dc64f2e815
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
+<<<<<<< HEAD
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
@@ -20,6 +26,12 @@ DEBUG = False
 ALLOWED_HOSTS = ['journeyinto.tech']
 
 # Application definition
+=======
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
+
+>>>>>>> d34e630779183b1cabd77b3b3a8561dc64f2e815
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -60,6 +72,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'portfolio.wsgi.application'
 
+<<<<<<< HEAD
 # Database
 # Use dj_database_url to parse the database URL from the environment
 DATABASES = {
@@ -67,6 +80,12 @@ DATABASES = {
 }
 
 # Password validation
+=======
+DATABASES = {
+    'default': dj_database_url.config(default=os.environ.get('POSTGRES_URL'))
+}
+
+>>>>>>> d34e630779183b1cabd77b3b3a8561dc64f2e815
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -82,7 +101,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+<<<<<<< HEAD
 # Internationalization
+=======
+>>>>>>> d34e630779183b1cabd77b3b3a8561dc64f2e815
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -91,13 +113,24 @@ USE_I18N = True
 
 USE_TZ = True
 
+<<<<<<< HEAD
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = 'static/'
+=======
+STATIC_URL = '/static/'
+>>>>>>> d34e630779183b1cabd77b3b3a8561dc64f2e815
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+<<<<<<< HEAD
 # Media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+=======
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+>>>>>>> d34e630779183b1cabd77b3b3a8561dc64f2e815

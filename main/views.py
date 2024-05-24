@@ -15,8 +15,10 @@ def projects(request):
     return render(request, "projects.html", {"projects": projects, "tags": tags})
 
 
+
 def contact(request):
-    return render(request, "contact.html")
+    context = {'email': 'support@journeyinto.tech'}
+    return render(request, 'contact.html', context)
 
 def resume(request):
     return render(request, "resume.html")

@@ -2,23 +2,27 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 import dj_database_url
+import mimetypes
 
 # Load environment variables from a .env file if it exists
 load_dotenv()
 
-import mimetypes
-
+# Add MIME types for CSS and JavaScript
 mimetypes.add_type("text/css", ".css", True)
 mimetypes.add_type("application/javascript", ".js", True)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Security key management
 SECRET_KEY = os.environ.get('SECRET_KEY', 'your-default-secret-key')
 
+# Debug mode management
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
+# Allowed hosts management
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
 
+# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -60,8 +64,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'portfolio.wsgi.application'
 
+# Database configuration using dj_database_url to parse database URL
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('POSTGRES_URL'))
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL')
+    )
 }
 
 AUTH_PASSWORD_VALIDATORS = [

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+    <title>Show Distances</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'distances/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Show Distances</h1>
+        <form method="post">
+            {% csrf_token %}
+            <label for="given_address">Enter Address:</label>
+            <input type="text" id="given_address" name="given_address">
+            <button type="submit">Show Distances</button>
+        </form>
+        {% if distances %}
+            <h2>Distances from {{ given_address }}</h2>
+            <ul>
+                {% for name, info in distances.items %}
+                    <li>{{ name }} ({{ info.address }}): {{ info.distance }} ({{ info.duration }})</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <a href="{% url 'add_address' %}">Add Another Address</a>
+    </div>
+</body>
+</html>

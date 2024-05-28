@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Tools</h1>
+    <ul>
+        <li><a href="{% url 'tool_detail' tool_id=1 %}">Tool 1</a></li>
+        <li><a href="{% url 'tool_detail' tool_id=2 %}">Tool 2</a></li>
+        <li><a href="{% url 'tool_detail' tool_id=3 %}">Tool 3</a></li>
+        <!-- Add more tools here -->
+    </ul>
+{% endblock %}

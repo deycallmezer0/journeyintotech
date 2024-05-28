@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+    <title>Edit Address</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'distances/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Address</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save Changes</button>
+        </form>
+        <a href="{% url 'add_address' %}">Back to Address List</a>
+    </div>
+</body>
+</html>

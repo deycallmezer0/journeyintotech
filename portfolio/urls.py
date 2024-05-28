@@ -3,10 +3,15 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
+from django.contrib import admin
+from django.urls import path, include
+
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("", include("main.urls")),
+    path('admin/', admin.site.urls),
+    path('tools/distance/', include('distance_tool.urls')),
+    path('', include('main.urls')),  # Ensure your main app URLs are also included
 ]
+
 
 # Serve static files during development
 if settings.DEBUG:

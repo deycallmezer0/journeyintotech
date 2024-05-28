@@ -3,7 +3,9 @@ import os
 from dotenv import load_dotenv
 import dj_database_url
 
+# Load environment variables from a .env file if it exists
 load_dotenv()
+
 import mimetypes
 
 mimetypes.add_type("text/css", ".css", True)
@@ -11,7 +13,7 @@ mimetypes.add_type("application/javascript", ".js", True)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ.get('SECRET_KEY', '')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'your-default-secret-key')
 
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
@@ -24,8 +26,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "main",
-    'distance_tool'
+    'main',
+    'distance_tool',
 ]
 
 MIDDLEWARE = [

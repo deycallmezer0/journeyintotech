@@ -5,19 +5,73 @@
 Contact Page
 {% endblock %}
 {% block extrahead %}
-<link rel="stylesheet" href="{% static 'contact.css' %}" />
+<link rel="stylesheet" href="{% static 'css/contact.css' %}" />
 {% endblock %}
 
 
 {% block content %}
 <div class="container">
-  <h1>Contact Me</h1>
-  <p>Thank you for visiting my site. I hope you enjoyed your visit. If you have any feedback or suggestions, please let me know. I would love to hear from you!</p>
-<p>You can reach me by email at <a href="mailto:chrisiszer0zdev@gmail.com">chrisiszer0zdev@gmail.com</a></p>
-<p>Or you can connect with me on social media:</p>
-<ul>
-  <li><a href="https://www.linkedin.com/in/christopher-holmes-16954b225/" target="_blank">LinkedIn</a></li>
-  <li><a href="https://www.upwork.com/fl/~01f53727678c54c458?mp_source=share" target="_blank">Upwork</a></li>
-  <li><a href="https://github.com/deycallmezer0" target="_blank">GitHub</a></li>
+  <h1>Contact Us</h1>
+  <p>Here are our social media links and contact information.</p>
+  <div class="contact-info">
+    <div class="contact-item">
+      <img src="{% static 'images/email.png' %}" alt="Email Icon" />
+      <p>Email:
+        <a href="mailto:
+          {{email}}">
+          {{email}}
+        </a>
+      </p>
+    </div>
+    <div class="contact-item">
+      <img src="{% static 'images/phone.png' %}" alt="Phone Icon" />
+      <p>Phone: {{phone}}</p>
+    </div>
+    <div class="contact-item">
+      <img src="{% static 'images/facebook.png' %}" alt="Facebook Icon" />
+      <p>Facebook:
+        <a href="{{facebook}}">
+          {{facebook}}
+        </a>
+      </p>
+    </div>
+    <div class="contact-item">
+      <img src="{% static 'images/twitter.png' %}" alt="Twitter Icon" />
+      <p>Twitter:
+        <a href="{{twitter}}">
+          {{twitter}}
+        </a>
+      </p>
+    </div>
+    <div class="contact-item">
+      <img src="{% static 'images/youtube.png' %}" alt="Youtube Icon" />
+      <p>Youtube:
+        <a href="{{youtube}}">
+          {{youtube}}
+        </a>
+      </p>
+    </div>
+    <div class="contact-item">
+      <img src="{% static 'images/instagram.png' %}" alt="Instagram Icon" />
+      <p>Instagram:
+        <a href="{{instagram}}">
+          {{instagram}}
+        </a>
+      </p>
+    </div>
+    <div class="contact-item">
+      <img src="{% static 'images/tiktok.png' %}" alt="TikTok Icon" />
+      <p>TikTok:
+        <a href="{{tiktok}}">
+          {{tiktok}}
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/contact.js' %}"></script>
 {% endblock %}
 

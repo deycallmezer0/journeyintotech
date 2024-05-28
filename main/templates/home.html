@@ -5,31 +5,31 @@
   Home Page
 {% endblock %}
 {% block extrahead %}
-  <link rel="stylesheet" href="{% static 'home.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/home.css' %}" />
 {% endblock %}
 
 {% block content %}
   <div class="container">
     <h1>Welcome to Journey into Tech!</h1>
     <div class="hero">
-      <img src="{% static 'images/hero.jpg' %}" alt="Hero Image" />
+      <img src="{% static 'images/hero.png' %}" alt="Hero Image" />
       <h2>Meet the Team</h2>
       <div class="team">
         <div class="team-member">
-          <img src="{% static 'images/team-member1.jpg' %}" alt="Team Member 1" />
+          <img src="{% static 'images/me.jpg' %}" alt="Team Member 1" />
           <h3>Chris Holmes</h3>
           <h4>Founder</h4>
-          <p>John is a software engineer with a passion for web development.</p>
+          <p>Chris is a full-stack developer with a passion for learning and problem solving.</p>
         </div>
         <div class="team-member">
-          <img src="{% static 'images/team-member2.jpg' %}" alt="Team Member 2" />
+          <img src="{% static 'images/jeremy.jpg' %}" alt="Team Member 2" />
           <h3>Jeremy Booth</h3>
           <h4>Co-Founder</h4>
-          <p>Jerem is a data scientist with a passion for machine learning.</p>
+          <p>Jeremy is a network specialist with a passion for teaching and helping others.</p>
         </div>
   </div>
 {% endblock %}
 
 {% block extra_js %}
-  <script src="{% static 'home.js' %}"></script>
+  <script src="{% static 'js/home.js' %}"></script>
 {% endblock %}

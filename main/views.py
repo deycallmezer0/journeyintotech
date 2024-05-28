@@ -15,7 +15,8 @@ def projects(request):
     return render(request, "projects.html", {"projects": projects, "tags": tags})
 
 
-
+def tools(request):
+    return render(request, "tools.html")
 def contact(request):
     context = {'email': 'support@journeyinto.tech'}
     return render(request, 'contact.html', context)

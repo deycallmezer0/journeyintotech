@@ -22,6 +22,11 @@ def contact(request):
     context = {'email': 'support@journeyinto.tech'}
     return render(request, 'contact.html', context)
 
+
+def tools_list(request):
+    tools = Tools.objects.all()
+    return render(request, 'tools/tools_list.html', {'tools': tools})
+
 def resume(request):
     return render(request, "resume.html")
 

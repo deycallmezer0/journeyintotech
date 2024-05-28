@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <h1>Tools</h1>
+    <p>Here are some tools that I have created to help with various tasks.</p>
+    <div class="tools-list">
+        {% for tool in tools %}
+        <div class="tool">
+            <h2>{{ tool.name }}</h2>
+            <p>{{ tool.description }}</p>
+            {% if tool.link %}
+            <a href="{{ tool.link }}">Go to {{ tool.name }}</a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

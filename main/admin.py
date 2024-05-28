@@ -22,7 +22,7 @@ class ToolsAdmin(admin.ModelAdmin):
     list_display = ('name', 'link')
     search_fields = ('name', 'description')
 
-admin.site.register(Tools, ToolsAdmin)
-admin.site.register(Tag, TagAdmin)
-admin.site.register(Project, ProjectAdmin)
+admin.site.register(Tag)
+admin.site.register(Project)
 admin.site.register(ProjectImage)
+admin.site.register(Tools)

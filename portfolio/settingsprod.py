@@ -45,7 +45,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'portfolio.urls'
-
+print("SECRET_KEY:", os.environ.get('SECRET_KEY'))
+print("DEBUG:", os.environ.get('DEBUG'))
+print("ALLOWED_HOSTS:", os.environ.get('ALLOWED_HOSTS'))
+print("DATABASE_URL:", os.environ.get('POSTGRES_URL'))
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -67,7 +70,7 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database configuration using dj_database_url to parse database URL
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL')
+        default=os.environ.get('POSTGRES_URL')
     )
 }
 

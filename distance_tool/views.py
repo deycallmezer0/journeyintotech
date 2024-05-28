@@ -3,8 +3,8 @@ from .models import Address
 from .forms import AddressForm
 import requests
 import logging
-
-API_KEY = 'AIzaSyDOD28CJLBsI9prNA5U3tZADEWm9SqGCeI'
+import os
+API_KEY = os.getenv('GOOGLE_API_KEY')
 
 logging.basicConfig(level=logging.DEBUG, filename='debug.log')
 

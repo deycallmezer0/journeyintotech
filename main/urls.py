@@ -15,8 +15,8 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('projects/', views.projects, name='projects'),
     path('resume/', views.resume, name='resume'),
-    path('project/<int:id>/', views.project, name='project')
-
+    path('project/<int:id>/', views.project, name='project'),
+    path('tools/', views.tools, name='tools'),
 ]
 # Serve static files during development
 if settings.DEBUG:

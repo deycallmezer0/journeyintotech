@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Project, Tag
-
+from .models import Project, Tag, Tools
 
 # Create your views here.
 
@@ -16,7 +15,9 @@ def projects(request):
 
 
 def tools(request):
-    return render(request, "tools.html")
+    tools = Tools.objects.all()
+    return render(request, "tools.html", {"tools": tools})
+
 def contact(request):
     context = {'email': 'support@journeyinto.tech'}
     return render(request, 'contact.html', context)

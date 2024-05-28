@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
     <h1>Tools</h1>
-    <ul>
-        <li><a href="{% url 'show_distances' %}">Show Distances</a></li>
-        <li><a href="{% url 'show_distances' %}">Show Distances</a></li>
-        <li><a href="{% url 'show_distances' %}">Show Distances</a></li>
-    </ul>
+    <p>Here are some tools that I have created to help with various tasks.</p>
+    <ul> 
+        {% for tool in tools %}
+            <li><a href="{% url 'tool' tool.id %}">{{tool.name}}</a></li>
+        {% endfor %}
 {% endblock %}

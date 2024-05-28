@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Tag, Project, ProjectImage
+from .models import Tools
 
 class ProjectImageInline(admin.TabularInline):
     model = ProjectImage
@@ -17,6 +18,11 @@ class TagAdmin(admin.ModelAdmin):
     list_display = ('name',)
     search_fields = ('name',)   
 
+class ToolsAdmin(admin.ModelAdmin):
+    list_display = ('name', 'link')
+    search_fields = ('name', 'description')
+
+admin.site.register(Tools, ToolsAdmin)
 admin.site.register(Tag, TagAdmin)
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(ProjectImage)

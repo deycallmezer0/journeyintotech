@@ -1,31 +1,35 @@
-<!DOCTYPE html>
 {% extends 'base.html' %}
 {% load static %}
 
-<html>
-<head>
-    <title>Add Address</title>
+{% block title %}
+    Add Address
+{% endblock %}
+{% block extrahead %}
     <link rel="stylesheet" type="text/css" href="{% static 'distances/styles.css' %}">
-</head>
-<body>
+{% endblock %}
+
+{% block content %}
     <div class="container">
         <h1>Add Address</h1>
         <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Add</button>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Add</button>
         </form>
         <h2>Saved Addresses</h2>
         <ul>
-            {% for address in addresses %}
-                <li>
-                    {{ address.name }}: {{ address.address }}
-                    <a href="{% url 'edit_address' address.id %}">Edit</a> |
-                    <a href="{% url 'delete_address' address.id %}">Delete</a>
-                </li>
-            {% endfor %}
+                {% for address in addresses %}
+                        <li>
+                                {{ address.name }}: {{ address.address }}
+                                <a href="{% url 'edit_address' address.id %}">Edit</a> |
+                                <a href="{% url 'delete_address' address.id %}">Delete</a>
+                        </li>
+                {% endfor %}
         </ul>
         <a href="{% url 'show_distances' %}">Show Distances</a>
     </div>
-</body>
-</html>
+{% endblock %}
+
+{% block extra_js %}
+    <!-- Add any JavaScript files here -->
+{% endblock %}

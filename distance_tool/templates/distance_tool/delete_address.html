@@ -1,21 +1,25 @@
-<!DOCTYPE html>
-
 {% extends 'base.html' %}
 {% load static %}
-<html>
-<head>
-    <title>Delete Address</title>
+
+{% block title %}
+    Delete Address
+{% endblock %}
+{% block extrahead %}
     <link rel="stylesheet" type="text/css" href="{% static 'distances/styles.css' %}">
-</head>
-<body>
+{% endblock %}
+
+{% block content %}
     <div class="container">
         <h1>Delete Address</h1>
         <p>Are you sure you want to delete the address "{{ address.name }}: {{ address.address }}"?</p>
         <form method="post">
-            {% csrf_token %}
-            <button type="submit">Yes, Delete</button>
+                {% csrf_token %}
+                <button type="submit">Yes, Delete</button>
         </form>
         <a href="{% url 'add_address' %}">Cancel</a>
     </div>
-</body>
-</html>
+{% endblock %}
+
+{% block extra_js %}
+    <!-- Add any JavaScript files here -->
+{% endblock %}

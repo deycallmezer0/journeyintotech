@@ -1,21 +1,25 @@
-<!DOCTYPE html>
 {% extends 'base.html' %}
 {% load static %}
 
-<html>
-<head>
-    <title>Edit Address</title>
+{% block title %}
+    Edit Address
+{% endblock %}
+{% block extrahead %}
     <link rel="stylesheet" type="text/css" href="{% static 'distances/styles.css' %}">
-</head>
-<body>
+{% endblock %}
+
+{% block content %}
     <div class="container">
         <h1>Edit Address</h1>
         <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Save Changes</button>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Save Changes</button>
         </form>
         <a href="{% url 'add_address' %}">Back to Address List</a>
     </div>
-</body>
-</html>
+{% endblock %}
+
+{% block extra_js %}
+    <!-- Add any JavaScript files here -->
+{% endblock %}

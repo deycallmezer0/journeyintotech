@@ -4,7 +4,7 @@ from .forms import AddressForm
 import requests
 import logging
 
-API_KEY = 'YOUR_GOOGLE_MAPS_API_KEY'
+API_KEY = 'AIzaSyDOD28CJLBsI9prNA5U3tZADEWm9SqGCeI'
 
 logging.basicConfig(level=logging.DEBUG, filename='debug.log')
 
